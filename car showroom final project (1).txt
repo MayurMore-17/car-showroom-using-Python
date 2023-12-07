@@ -1,0 +1,169 @@
+############# final main code ############################
+stf1=("-7-inch infotainment touchscreen\n                   -Bluetooth connectivity\n                   -LED headlights\n                   -Sport-tuned suspension\n                   -Convertible soft top ")
+stf2=("-7-inch touchscreen infotainment system\n                   -Apple CarPlay and Android Auto compatibility\n                   -Adaptive cruise control\n                   -Lane departure warning with steering assist")
+stf3=("-8-inch touchscreen infotainment system\n                   -Smartphone integration\n                   -Advanced driver-assistance systems\n                   -Heated seats\n                   -Keyless entry")
+stf4=("9-inch touchscreen infotainment system\n                   -Apple CarPlay and Android Auto compatibility\n                   -Adaptive cruise control\n                   -Lane departure warning with steering assist\n                   -Leather-trimmed seats")
+class Car:
+  def __init__(self):
+    self.wheel= 4
+    self.ab="YES"
+class M01(Car):
+    def __init__(self,model_name="Mazda MX-5 Miata 2021",engine='2.0L SkyActiv-G Inline-4 Gasoline Engine',tankcap =45.5,wheels =4,seat= 2,hp=181,torque=204,transmission= 6 ,average= 4.7,price="19,50,000",sf1="ABS",sf2 = "ADAS", stand_fea=stf1):
+        self.model_name = model_name
+        self.engine= engine
+        self.tankcap= tankcap
+        self.wheels = wheels
+        self.seat = seat
+        self.hp = hp
+        self.torque =  torque
+        self.transmission = transmission
+        self.price = price
+        self.sf1 = sf1
+        self.sf2 = sf2
+        self.stand_fea = stand_fea
+        self.average = average
+
+class M02(Car):
+    def __init__(self,model_name="Toyota Camry 2021",engine='3.5L V6 Gasoline Engine',tankcap =45,seat=5,hp=301,torque=276,transmission= 8,average = 4.5,price="18,75,000",sf1="ABS",sf2="ADAS", stand_fea=stf2):
+        self.model_name = model_name
+        self.engine = engine
+        self.tankcap= tankcap
+        self.average = average
+        self.seat = seat
+        self.hp = hp
+        self.torque =  torque
+        self.transmission = transmission
+        self.price = price
+        self.sf1 = sf1
+        self.sf2 = sf2
+        self.stand_fea = stand_fea
+
+class M03(Car):
+    def __init__(self,model_name=" XYZ Motors Electric E1 2021",engine='Electric Motor',battery_cap =60,wheels =4,single_charge = 280,seat=5,hp=130,torque=250,transmission= "Single",price="16,00,000",stand_fea=stf3,sf1="ABS",sf2="ADAS",sf3="ESC"):
+        self.model_name = model_name
+        self.engine= engine
+        self.battery_cap = battery_cap
+        self.wheels = wheels
+        self.seat = seat
+        self.hp = hp
+        self.torque =  torque
+        self.transmission = transmission
+        self.price = price
+        self.single_charge = single_charge
+        self.stand_fea = stand_fea
+        self.sf1 = sf1
+        self.sf2 = sf2
+        self.sf3 = sf3
+
+class M04(Car):
+  def __init__(self,model_name= "PQR Motors Hybrid H2 2021",engine='1.5L Inline-4 Gasoline Engine + Electric Motor',seat=5,hp=160,tankcap=50,battery_cap=15 ,average = 21,torque=250,transmission =" Continuously Variable Transmission",price="15,00,000",stand_fea=stf4,sf1="ABS",sf3="ESC"):
+    self.model_name = model_name
+    self.engine = engine
+    self.stand_fea = stand_fea
+    self.tankcap = tankcap
+    self.battery_cap = battery_cap
+    self.seat = seat
+    self.hp = hp
+    self.torque =  torque
+    self.transmission = transmission
+    self.price = price
+    self.sf1 = sf1
+    self.sf3 = sf3
+    self.average = average
+
+user=0
+c=Car()
+while True:
+  user=input("What is your preferred transmission type Automatic or Manual: ")
+  user=user.upper()
+  if user == "MANUAL" or user== "AUTOMATIC":
+    if user == 'MANUAL':
+      g= M01()
+      print("This Manual Gasoline Car Available In 4 Color Varient: Blue, Red, Green, Black")
+      while True:
+        color = input("Please Select One Color From Available Varients: ")
+        color=color.upper()
+
+        if color in ("RED","BLUE","GREEN","BLACK"):
+          print("***********************************************************************************************************************************************")
+          print(f"Model Name: {g.model_name}\nEngine Type: {g.engine} \nFuel tank capacity: {g.tankcap} liter \nColor Of Car: {color} \nAverage: {g.average} km/ltr \nNumber Of Wheels:{c.wheel} \nAir Bags Available: {c.ab}  ")
+          print(f"Seating Capacity: {g.seat} \nHorse power: {g.hp} hp \nTransmission: {g.transmission} speed Manual \nTorque: {g.torque} Nm of torque")
+          print(f"Safety Features: {g.sf1}( anti-lock brakes) and {g.sf2}(advanced driver assistance systems)")
+          print(f"Standard Features: {g.stand_fea}")
+          print(f"**PRICE: start from {g.price} INR**")
+          print("***********************************************************************************************************************************************")
+
+          break
+        else:
+          print("!!Sorry!! Color Is Not Available Yet")
+      break
+
+    elif user == 'AUTOMATIC':
+      print("Automatic Car available In Three Engine Type: Gasoline, Electric and Hybrid ")
+
+      while True :
+        enginee = input("Please Select Engine As per Your Convenience: ")
+        enginee = enginee.upper()
+        if enginee == "GASOLINE":
+          G= M02()
+          print("This Automatic Gasoline Car Available In 4 Color Varient: Blue, Red, Green, Black ")
+          while True:
+            color = input("Please Select One Color From Available Varients: ")
+            color=color.upper()
+            if color in ("RED","BLUE","GREEN","BLACK"):
+              print("***********************************************************************************************************************************************")
+              print(f"Model Name: {G.model_name} \nEngine Type: {G.engine} \nFuel Tank Capacity: {G.tankcap} liter \nColor Of Car: {color} \nAverage: {G.average} km/ltr \nNumber Of Wheels:{c.wheel} \nAir Bags Available: {c.ab}  ")
+              print(f"Seating Capacity: {G.seat} \nHorse power: {G.hp} hp \nTransmission: {G.transmission} speed Automatic \nTorque: {G.torque} Nm of torque")
+              print(f"Safety Features: {G.sf1}(anti-lock brakes) and {G.sf2}(advanced driver assistance systems)")
+              print(f"Standard Features: {G.stand_fea}")
+              print(f"**PRICE: start from {G.price} INR**")
+              print("***********************************************************************************************************************************************")
+
+              break
+            else:
+              print("!!Sorry!! Color Is Not Available Yet")
+          break
+        elif enginee == "ELECTRIC":
+          E= M03()
+          print("This Automatic Electric Car Available In 4 Color Varient: Blue, Red, Green, Black ")
+          while True:
+            color = input("Please Select One Color From Available Varients: ")
+            color=color.upper()
+            if color in ("RED","BLUE","GREEN","BLACK"):
+              print("***********************************************************************************************************************************************")
+              print(f"Model Name: {E.model_name} \nEngine Type: {E.engine} \nBattery Capacity: {E.battery_cap} Kwh \nColor Of Car: {color} \nAverage: {E.single_charge } km/single charge \nNumber Of Wheels:{c.wheel} \nAir Bags Available: {c.ab} ")
+              print(f"Seating Capacity: {E.seat} \nHorse power: {E.hp} hp \nTransmission: {E.transmission} speed Automatic \nTorque: {E.torque} Nm of torque")
+              print(f"Safety Features: {E.sf1}( anti-lock brakes), {E.sf2}(advanced driver assistance systems ) and {E.sf3}(electronic stability control)")
+              print(f"Standard Features: {E.stand_fea}")
+              print(f"**PRICE: start from {E.price} INR**")
+              print("***********************************************************************************************************************************************")
+              break
+            else:
+              print("!!Sorry!! Color Is Not Available Yet")
+          break
+
+        elif enginee == "HYBRID":
+          H= M04()
+          print("This Automatic Hybrid Car Available In 4 Color Varient: Blue, Red, Green, Black ")
+          while True:
+            color=""
+            color = input("Please Select One Color From Available Varients: ")
+            color=color.upper()
+            if color in ("RED","BLUE","GREEN","BLACK"):
+              print("***********************************************************************************************************************************************")
+              print(f"Model Name: {H.model_name} \nEngine Type: {H.engine} \nFuel Tank Tapacity: {H.tankcap} liter \nElectric Battery Capacity: {H.battery_cap} kWh \nColor Of Car: {color}")
+              print(f"Seating Capacity: {H.seat} \nCombined Horse power: {H.hp} hp \nTransmission: {H.transmission}  \nCombined Torque: {H.torque} Nm of torque")
+              print(f"Average: {H.average} km/ltr \nNumber Of Wheels:{c.wheel} \nAir Bags Available: {c.ab} \nSafety Features: {H.sf1}(anti-lock brakes) and {H.sf3}(electronic stability control)")
+              print(f"Standard Features: {H.stand_fea}")
+              print(f"**PRICE: start from {H.price} INR**")
+              print("***********************************************************************************************************************************************")
+              break
+            else:
+              print("!!Sorry!! Color Is Not Available Yet")
+          break
+        else:
+          print("!! Please Enter Valid Details of Engine !!")
+      break
+  else:
+    print("!! Please Enter Valid Details Of Car Transmission !!")
+
